@@ -1,0 +1,6 @@
+En CommandJS no hace falta poner extension al utilizar: "const {sum} = require('./sum.mjs')"
+Mietras que en EMAScript si es necesario poner la extension: "import {sum, sub, mult} from './sum.mjs'
+Acctualmente es mas recomendavble y es mas utilizado mjs.
+Ver en la documentacion cuales tienen y cuales no tienen promesas.
+Siempre hayq ue priorizar que sean asicronas o promesas antes que syncronas.
+Diferencias entre sincrono asincrono y secuencial, asincrono  y en paralelo.
