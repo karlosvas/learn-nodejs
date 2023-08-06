@@ -4,6 +4,3 @@ Acctualmente es mas recomendavble y es mas utilizado mjs.
 Ver en la documentacion cuales tienen y cuales no tienen promesas.
 Siempre hayq ue priorizar que sean asicronas o promesas antes que syncronas.
 Diferencias entre sincrono asincrono y secuencial, asincrono  y en paralelo.
-
-![SyncYAsync](sync-asyncCallbaks-astncSecuencial-parallel.png)
-
