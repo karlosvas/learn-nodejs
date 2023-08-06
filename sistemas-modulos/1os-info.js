@@ -1,5 +1,5 @@
 const os = require('node:os')
-//Utilizando "Ctrl+." selecionadno los tres puntos del require nos cambuiara automaticamente a el módulo ECMAScript
+// Utilizando "Ctrl+." selecionadno los tres puntos del require nos cambuiara automaticamente a el módulo ECMAScript
 console.log('Información sistema operativo')
 console.log('--------------------')
 
