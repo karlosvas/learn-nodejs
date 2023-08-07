@@ -23,3 +23,10 @@ Hay dos tipos de dependencias, las "dependencias de producción", nuestra aoplic
 necesita para funcionar, por ejemplo "npm i picocolors"
 la otra es "dependencias de desarollo", para instalarla devemos por
 ejemplo "npm i standard -D" la -D o --development indica que es de desarollo.
+
+Status code;
+Existe una pagina web que expllica todos los errores de una manera duivertida con gatos,
+https://http.cat
+
+Un buffer, en nodejs es una clase global que la utilizan para trabajar con datos binarios,
+Lo guarda en un espacio de la memoria fisica.
