@@ -1,4 +1,5 @@
 const http = require('node:http')
+const PORT = process.env.PORT ?? 1234
 const dittoJSON = require('./pokemon/ditto.json')
 
 const processRequest = (req, res) => {
@@ -12,7 +13,7 @@ const processRequest = (req, res) => {
         default:
           res.statusCode = 404
           res.setHeader('Content-Type', 'text/plain; charset=utf-8')
-          return res.end('404')
+          return res.end('404 error')
       }
     case 'POST':
       switch (url) {
@@ -37,6 +38,6 @@ const processRequest = (req, res) => {
 
 const server = http.createServer(processRequest)
 
-server.listen(1234, () => {
-  console.log('server listening on port http://localhost:1234')
+server.listen(PORT, () => {
+  console.log(`server listening on port http://localhost:${PORT}`)
 })

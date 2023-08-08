@@ -1,0 +1,24 @@
+{
+  "name": "clase-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.http.js",
+  "nodemonConfig": {
+    "ignore": [
+      "**/test/**",
+      "**/docs/**"
+    ],
+    "delay": 1000
+  },
+  "scripts": {
+    "dev:1": "nodemon -L 1.http.js",
+    "dev:2": "nodemon -L 2.routing.js",
+    "dev:3": "nodemon -L 3.express.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
