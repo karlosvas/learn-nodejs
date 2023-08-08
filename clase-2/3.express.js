@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-
-const PORT = process.env.PORT ?? 1234
-const dittoJSON = require('./pokemon/ditto.json')
+const PORT = process.env.PORT ?? 1234;
+const dittoJSON = require('./pokemon/ditto.json');
 
 app.disable('x-powered-by')
 app.use(express.json())
@@ -43,6 +42,6 @@ app.post('/pokemon', (req, res) => {
 app.use((req, res) => {
   res.status(404).send('<body style= background-color:black; >')
 })
-app.listen(PORT, () => {
+app.listen(PORT, "localhost", () => {
   console.log(`server listening on port http://localhost:${PORT}`)
 })

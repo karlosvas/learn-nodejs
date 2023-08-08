@@ -1,5 +1,8 @@
 ### Recuperar informacion del pokemon ditto
 GET http://localhost:1234/pokemon/ditto
+
+### Ver cielo en 1.http
+GET http://localhost:1234/cielo
     
 
 ### Para crear un pokemon
