@@ -29,5 +29,4 @@ function validatePartialMovie(object){
     return mopvieSchema.partial().safeParse(object)
 }
 
-module.exports = { validateMovie }
-module.exports = { validatePartialMovie }
+module.exports = { validateMovie, validatePartialMovie}

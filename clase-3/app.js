@@ -3,9 +3,25 @@ const movies = require('./movies.json')
 const { validateMovie, validatePartialMovie } = require('./movies');
 const crypto = require('node:crypto')
 const app = express()
+const cors = require('cors')
 
 app.disable('x-powered-by')
 app.use(express.json())
+app.use(cors({
+    origin: (origin, callback) => {
+        const ACCEPTED_ORIGINS = [
+            'https://loacalhost:8080',
+            'https://movies.com'
+        ]
+    
+        if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
+            return callback(null, true)
+        } else {
+            return callback(new Error('Not allowed by CORS'))
+        }
+    }
+}))
+
 app.get('/', (req, res)=>{
     res.json({message: 'hola mundo' })
 })
@@ -62,6 +78,15 @@ app.patch('/movies/:id', (req, res )=>{
 
     movies[movieIndex] = updateMovie
     return res.json(updateMovie)
+})
+
+app.options('/movies:id', (req, res) => {
+    const origin = req.header('origin')
+    if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
+        res.header('Access-Control-Allow-Origin', origin)
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELATE')
+    }
+    res.send(200)
 })
 
 const PORT = process.envPORT ?? 1234

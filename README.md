@@ -29,7 +29,7 @@ la otra es "dependencias de desarollo", para instalarla devemos por
 ejemplo "npm i standard -D" la -D o --development indica que es de desarollo.
 
 Status code;
-Existe una pagina web que expllica todos los errores de una manera duivertida con gatos,
+Existe una página web que explíca todos los errores de una manera divertida con imágenes de gatos,
 https://http.cat
 
 Un buffer, en nodejs es una clase global que la utilizan para trabajar con datos binarios,
