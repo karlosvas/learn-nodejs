@@ -36,4 +36,4 @@ Un buffer, en nodejs es una clase global que la utilizan para trabajar con datos
 Lo guarda en un espacio de la memoria fisica.
 
 POST -PUT - PATCH
-(post-put-patch.png)
+![post-put-patch](post-put-patch.png)
