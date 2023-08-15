@@ -10,7 +10,7 @@ Actualmente es mas recomendable y mas utilizado mjs.
 Trabajo: Ver en la documentacion cuales tienen y cuales no tienen promesas.
 Siempre hay que priorizar que sean asicronas o promesas antes que syncronas.
 Diferencias de sincrona, asincrona con callbaks, asincrona secuencial, y asincrona paralela.
-![SyncYAsync](sync-asyncCallbaks-astncSecuencial-parallel.png)
+![SyncYAsync](sync-async-cb-seq-par.png)
 
 La diferencia entre parámetros y argumentos: los parámetros son las variables
 definidas en la declaración de la función, mientras que los argumentos son los

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "movies": "nodemon -L app.js",
+    "movies": "nodemon app.js -L",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
