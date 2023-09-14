@@ -1,7 +1,7 @@
 import express, { json } from 'express';
 import { moviesRouter } from './routes/movies.js';
 import { corsMidelware } from './midelwares/cors.js';
-import { readJSON } from './utils.js';
+// import { readJSON } from './utils.js';
 
 // EN EL FUTURO EL IMPORT SERA ASI:
 //import movies from './movies.json' whith { type: 'json' }
@@ -16,7 +16,7 @@ const movies = JSON.parse(fs.readFileSync('./movies.json', 'utf-8'))
 // const require = createRequire(import.meta.url);
 // const movies = require('./movies.json')
 
-const movies = readJSON('./movies.json')
+// const movies = readJSON('./movies.json')
 
 const app = express()
 app.use(json())
@@ -29,7 +29,7 @@ app.disable('x-powered-by') // deshabilitar el header X-Powered-By: Express
 // CORS PRE-Flight
 // OPTIONS
 
-app.use('/movies', moviesRouter)
+app.use('/', moviesRouter)
 
 const PORT = process.env.PORT ?? 1234
 
