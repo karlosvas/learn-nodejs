@@ -13,6 +13,7 @@ const connection = await mysql.createConnection(config)
 
 
 export class MovieModel {
+
     static async getAll({ genre }) {
         if (genre) {
             const loweCaseGenre = genre.toLowerCase()

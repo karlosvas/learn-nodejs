@@ -1,8 +1,8 @@
 import { validateMovie, validatePartialMovie } from "../schemas/movies.js"
 
 export class MovieController {
-    constructor({ MovieModel }) {
-        this.movieModel = MovieModel
+    constructor({ movieModel }) {
+        this.movieModel = movieModel
     }
 
     getAll = async (req, res) => {
