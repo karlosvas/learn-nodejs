@@ -21,12 +21,12 @@ const mopvieSchema = z.object({
     )
 })
 
-function validateMovie(objet){
+function validateMovie(objet) {
     return mopvieSchema.safeParse(objet)
 }
 
-function validatePartialMovie(object){
+function validatePartialMovie(object) {
     return mopvieSchema.partial().safeParse(object)
 }
 
-module.exports = { validateMovie, validatePartialMovie}
+module.exports = { validateMovie, validatePartialMovie }

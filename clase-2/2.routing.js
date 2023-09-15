@@ -1,6 +1,6 @@
-const http = require('node:http')
+import { createServer } from 'node:http'
 const PORT = process.env.PORT ?? 1234
-const dittoJSON = require('./pokemon/ditto.json')
+import dittoJSON from './pokemon/ditto.json'
 
 const processRequest = (req, res) => {
   const { method, url } = req
@@ -36,8 +36,8 @@ const processRequest = (req, res) => {
   }
 }
 
-const server = http.createServer(processRequest)
+const server = createServer(processRequest)
 
-server.listen(PORT,"localhost", () => {
+server.listen(PORT, "localhost", () => {
   console.log(`server listening on port http://localhost:${PORT}`)
 })

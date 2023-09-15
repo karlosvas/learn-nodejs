@@ -1,10 +1,10 @@
-const express = require('express');
+import express, { json } from 'express';
 const app = express();
 const PORT = process.env.PORT ?? 1234;
-const dittoJSON = require('./pokemon/ditto.json');
+import dittoJSON from './pokemon/ditto.json';
 
 app.disable('x-powered-by')
-app.use(express.json())
+app.use(json())
 
 // app.use((req, res, next) => {
 //   if (req.method !== 'POST'){console.log("Cargando"); return next()}
@@ -34,7 +34,7 @@ app.get('/pokemon/ditto', (req, res) => {
 })
 
 app.post('/pokemon', (req, res) => {
-// req.body deberiamos guardar en base de datos
+  // req.body deberiamos guardar en base de datos
   res.status(201).json(req.body)
 })
 

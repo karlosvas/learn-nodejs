@@ -1,5 +1,5 @@
-const http = require('node:http') // protocolo HTTP
-const fs = require('node:fs')
+import { createServer } from 'node:http' // protocolo HTTP
+import { readFile } from 'node:fs'
 
 const desiredPort = process.env.PORT ?? 1234
 
@@ -9,7 +9,7 @@ const processRequest = (req, res) => {
   if (req.url === '/') {
     res.end('Mi página se actualiza funciona bien')
   } else if (req.url === '/cielo') {
-    fs.readFile('./cielo.png', (err, data) => {
+    readFile('./cielo.png', (err, data) => {
       if (err) {
         res.statusCode = 500
         res.end('<h1>500 Internal Server Error</h1>')
@@ -26,8 +26,8 @@ const processRequest = (req, res) => {
   }
 }
 
-const server = http.createServer(processRequest)
+const server = createServer(processRequest)
 
-server.listen(desiredPort,"localhost", () => {
+server.listen(desiredPort, "localhost", () => {
   console.log(`server listening on port http://localhost:${desiredPort}`)
 })

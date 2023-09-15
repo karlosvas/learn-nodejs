@@ -13,7 +13,7 @@ app.use(cors({
             'https://loacalhost:8080',
             'https://movies.com'
         ]
-    
+
         if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
             return callback(null, true)
         } else {
@@ -22,28 +22,28 @@ app.use(cors({
     }
 }))
 
-app.get('/', (req, res)=>{
-    res.json({message: 'hola mundo' })
+app.get('/', (req, res) => {
+    res.json({ message: 'hola mundo' })
 })
 
-app.get('/movies', (req, res)=>{
+app.get('/movies', (req, res) => {
     const { genre } = req.query
     if (genre) {
-        const filterMovies  = movies.filter(
-        movie => movie.genre.some(g => g.toLowerCase()== genre.toLowerCase()))
+        const filterMovies = movies.filter(
+            movie => movie.genre.some(g => g.toLowerCase() == genre.toLowerCase()))
         return res.json(filterMovies)
     }
     res.json(movies)
 })
 
-app.get('/movies/:id', (req, res)=>{
+app.get('/movies/:id', (req, res) => {
     const { id } = req.params
     const movie = movies.find(movie => movie.id == id)
     if (movie) return res.json(movie)
-    res.status(404).json({ message : 'Movie not found '})
+    res.status(404).json({ message: 'Movie not found ' })
 })
 
-app.post('/movies', (req,res) =>{
+app.post('/movies', (req, res) => {
     const result = validateMovie(req.body)
 
     if (result.error) {
@@ -55,15 +55,15 @@ app.post('/movies', (req,res) =>{
         ...result.data
     }
     movies.push(newMovie),
-    res.status(201).json(newMovie)
+        res.status(201).json(newMovie)
 })
 
-app.patch('/movies/:id', (req, res )=>{
-    const {id} = req.params
+app.patch('/movies/:id', (req, res) => {
+    const { id } = req.params
 
     const result = validatePartialMovie(req.body)
-    if (!result.success){
-        return res.status(400).json({ error: JSON.parse(result.error.message )})
+    if (!result.success) {
+        return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
 
     const movieIndex = movies.findIndex(movie => movie.id === id)
@@ -71,7 +71,7 @@ app.patch('/movies/:id', (req, res )=>{
         return res.status(404).json({ message: 'Movie not found' })
     }
 
-    const updateMovie ={
+    const updateMovie = {
         ...movies[movieIndex],
         ...result.data
     }

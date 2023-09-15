@@ -1,6 +1,6 @@
-const fs = require('node:fs/promises')
+import { readdir } from 'node:fs/promises'
 
-fs.readdir('.')
+readdir('.')
   .then(files => {
     files.forEach(file => {
       console.log(file)

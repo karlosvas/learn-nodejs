@@ -41,4 +41,3 @@ const movies = readJSON('./movies.json')
 
 // // CORS PRE-Flight
 // // OPTIONS
-
