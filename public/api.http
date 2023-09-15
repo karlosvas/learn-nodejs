@@ -1,0 +1,36 @@
+### Recuperar todas las películas
+GET http://localhost:1234/movies
+
+### Recuperar una película por id
+GET http://localhost:1234/movies/64c28a2a-5311-11ee-bef1-d8bbc157a351
+
+### Recuperar todas las películas por un género
+GET http://localhost:1234/movies?genre=drama
+
+### Crear una película con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "Django Unchained",
+    "year": 2012,
+    "director": "Quentin Tarantino",
+    "duration": 165,
+    "poster": "https://imgs.search.brave.com/39DNvkw_Zc2Jak9tEHwktqbIpMBngAQgNzulVuSSw5Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wZWxp/c2ltZy5vbmxpbmUv/Y292ZXIvZGphbmdv/LXNpbi1jYWRlbmFz/LmpwZw",
+    "genre": [
+        "Drama",
+        "Action"
+    ],
+    "rate": 10
+}
+
+### Borrar una pelicula
+DELETE http://localhost:1234/mopvies/7e3fd5ab-60ff-4ae2-92b6-9597f0308d1
+
+### Actualizar una película
+PATCH http://localhost:1234/movies/64c28694-5311-11ee-bef1-d8bbc157a351
+Content-Type: application/json
+
+{
+  "year": 1993
+}

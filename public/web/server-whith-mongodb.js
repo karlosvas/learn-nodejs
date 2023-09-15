@@ -1,4 +1,4 @@
 import { createApp } from "../app.js";
-import { MovieModel } from "../models/mysql/movie.js";
+import { MovieModel } from "../models/mongodb/movie.js";
 
 createApp({ movieModel: MovieModel })

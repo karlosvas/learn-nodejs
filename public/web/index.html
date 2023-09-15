@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Probar API Rest</title>
+  <title>moviesdb</title>
   <style>
-    article {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
 
-    img {
-      height: auto;
-      width: 320px;
-      max-width: 100%;
+  body {
+    background: #a8ffc2;
+    font-family: monospace;
+    & main {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      & img {
+        height: auto;
+        width: 320px;
+        max-width: 100%;
+      }
+
+      & button{
+        background: #252525;
+        color: rgb(240, 243, 255);
+        }
+
     }
+  }
+
   </style>
   <script type="module">
     fetch('http://localhost:1234/movies')
@@ -56,3 +68,5 @@
 </head>
 <body>
   <main></main>
+</body>
+</html>
