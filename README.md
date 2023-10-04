@@ -11,7 +11,7 @@ Mietras que en EMAScript si es necesario poner la extensión:
 Actualmente es mas recomendable y mas utilizado mjs, utilizan el sistema de módulos ES6 (ECMAScript) nativo
 Siempre hay que priorizar que sean asíncronas o promesas antes que síncronas.
 Diferencias de síncrona, asíncrona con callbaks, asíncrona secuencial, y asíncrona paralela.
-![SyncYAsync](sync-async.png)
+![SyncYAsync](./img/sync-async.png)
 
 La diferencia entre parámetros y argumentos: los parámetros son las variables
 definidas en la declaración de la función, mientras que los argumentos son los
@@ -38,4 +38,4 @@ Un buffer: En nodejs es una clase global que se utiliza para trabajar con datos 
 lo guarda en un espacio de la memoria física.
 
 ### POST - PUT - PATCH
-![post-put-patch](post-put-patch.png)
+![post-put-patch](./img/post-put-patch.png)

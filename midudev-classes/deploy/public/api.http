@@ -1,0 +1,36 @@
+### Recuperar todas las películas### Recuperar todas las películas
+GET https://learn-nodejs-lake.vercel.app/movies
+
+### Recuperar una película por id
+GET https://learn-nodejs-lake.vercel.app/movies/1990df63-4da7-11ee-aedf-32323730fdc3
+
+### Recuperar todas las películas por un género
+GET https://learn-nodejs-lake.vercel.app/movies?genre=ACTION
+
+### Crear una película con POST
+POST https://learn-nodejs-lake.vercel.app/movies/movies
+Content-Type: application/json
+
+{
+    "title": "Django Unchained",
+    "year": 2012,
+    "director": "Quentin Tarantino",
+    "duration": 165,
+    "poster": "https://imgs.search.brave.com/39DNvkw_Zc2Jak9tEHwktqbIpMBngAQgNzulVuSSw5Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wZWxp/c2ltZy5vbmxpbmUv/Y292ZXIvZGphbmdv/LXNpbi1jYWRlbmFz/LmpwZw",
+    "genre": [
+        "Drama",
+        "Action"
+    ],
+    "rate": 10
+}
+
+### Borrar una pelicula
+DELETE https://learn-nodejs-lake.vercel.app/movies/64d4d8825d614a4ec5984ae3
+
+### Actualizar una película
+PATCH https://learn-nodejs-lake.vercel.app/movies/64d4da882f83563ab4f40632
+Content-Type: application/json
+
+{
+  "year": 2022
+}
