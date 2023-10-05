@@ -1,5 +1,15 @@
 # learn-nodejs
-En este repositorio veremos los conceptos de nodejs desde cero, utilizando como el curso en Youtube de midulive
+En este repositorio se verán los conceptos de NodeJS desde cero, crear páginas dinámicas, crear paginas estáticas, asignar rutas, modelos y squemas con bases de datos como MySQL y MongoDB Atlas + mongoose 
+
+## Pruebalo
+Si encuentras oportunidades de mejora o identificas problemas, estaría agradecido si pudieras abrir issues en el repositorio. Tu experiencia y comentarios serían de gran ayuda para mejorar el proyecto. ¡Gracias de antemano!" 👍
+```bash
+pnpm i
+pnpm run start
+```
+## src
+Cursos midudev: https://www.youtube.com/watch?v=yB4n_K7dZV8&list=PLUofhDIg_38qm2oPOV-IRTTEKyrVBBaU7  
+Cursos bluuweb lista de reproduccion: https://www.youtube.com/watch?v=mG4U9t5nWG8&list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6
 
 ## Apuntes
 
