@@ -1,0 +1,30 @@
+<%- include("template/header", {tituloWeb: 'index'}) %>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Animal</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if (arrayMascotas.length > 0) { %>
+                    <% arrayMascotas.forEach(mascota => { %>
+
+                        <tr>
+                            <th scope="row"><%= mascota.animal %></th>
+                            <td><%= mascota.nombre %></td>
+                            <td><%= mascota.descripcion %></td>
+                            <td>asas</td>
+                        </tr>
+
+                    <% }) %>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+    
+<%- include("template/footer") %>
