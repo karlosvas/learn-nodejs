@@ -1,0 +1,18 @@
+<%- include("template/header", { titulo: 'moviesdb' }) %>
+<body>
+  <main class="main">
+    <div class="div-movies">
+      <% for (let i = 0; i < movies.length; i++){ %>
+        <div class="movie">
+          <h2><%= movies[i].title %></h2>
+          <p>Año: <%= movies[i].year %></p>
+          <p>Director: <%= movies[i].director %></p>
+          <p>Duración: <%= movies[i].duration %> minutos</p>
+          <p>Calificación: <%= movies[i].rate %></p>
+          <img src="<%= movies[i].poster %>" alt="<%= movies[i].title %> Poster">
+        </div>
+      <% } %>
+    </div>
+  </main>
+</body>
+</html>

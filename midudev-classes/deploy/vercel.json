@@ -2,10 +2,9 @@
     "version": 2,
     "builds": [
       {
-        "src": "app.js",
+        "src": "index.js",
         "use": "@now/node"
       }
-    ],
-    "root": "midudev-classes/deploy"
+    ]
   }
   

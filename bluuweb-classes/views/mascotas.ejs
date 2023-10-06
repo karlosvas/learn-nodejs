@@ -1,6 +1,12 @@
 <%- include("template/header", {tituloWeb: 'index'}) %>
 
-    <div class="container">
+    <div style="margin-top: 50px;" class="container">
+            <h1>CRUD Mongo</h1>
+            <a 
+                class="btn btn-success btn-block my-4"
+                href="/mascotas/crear"
+            > Crear nueva Mascota
+            </a>
         <table class="table">
             <thead>
               <tr>
@@ -18,7 +24,7 @@
                             <th scope="row"><%= mascota.animal %></th>
                             <td><%= mascota.nombre %></td>
                             <td><%= mascota.descripcion %></td>
-                            <td>asas</td>
+                            <td><button>Editar</button></td>
                         </tr>
 
                     <% }) %>
