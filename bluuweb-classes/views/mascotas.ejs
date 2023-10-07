@@ -1,7 +1,7 @@
-<%- include("template/header", {tituloWeb: 'index'}) %>
+<%- include("template/header", {tituloWeb: 'mascotas'}) %>
 
     <div style="margin-top: 50px;" class="container">
-            <h1>CRUD Mongo</h1>
+            <h1>CRUD Mongo Mascotas</h1>
             <a 
                 class="btn btn-success btn-block my-4"
                 href="/mascotas/crear"
@@ -9,28 +9,34 @@
             </a>
         <table class="table">
             <thead>
-              <tr>
+                <tr>
+                <th scope="col">_id</th>
                 <th scope="col">Animal</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
-                <th scope="col">Accion</th>
-              </tr>
+                <th scope="col">Acción</th>
+                </tr>
             </thead>
             <tbody>
                 <% if (arrayMascotas.length > 0) { %>
-                    <% arrayMascotas.forEach(mascota => { %>
-
-                        <tr>
-                            <th scope="row"><%= mascota.animal %></th>
-                            <td><%= mascota.nombre %></td>
-                            <td><%= mascota.descripcion %></td>
-                            <td><button>Editar</button></td>
-                        </tr>
-
-                    <% }) %>
+                <% arrayMascotas.forEach(mascota => { %>
+                    <tr>
+                        <th scope="row"><%= mascota._id %></th>
+                        <th scope="row"><%= mascota.animal %></th>
+                        <td scope="row"><%= mascota.nombre %></td>
+                        <td scope="row"><%= mascota.descripcion %></td>
+                        <td scope="row">
+                            <a 
+                                href="mascotas/<%= mascota._id %>"
+                                class="btn btn-warning brn-sm">
+                            Editar
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
                 <% } %>
             </tbody>
-          </table>
+        </table>
     </div>
-    
+
 <%- include("template/footer") %>

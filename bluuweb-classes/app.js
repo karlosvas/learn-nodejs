@@ -17,7 +17,7 @@ const publicPath = join(__dirname, "public");
 const app = express();
 const PORT = process.env.PORT;
 
-// Body parse
+// Body parser
 app.use(bodyParser.urlencoded({ extend: false }))
 app.use(bodyParser.json())
 

@@ -1,8 +1,12 @@
 import { MongoClient, ObjectId, ServerApiVersion } from 'mongodb'
-const uri = 'mongodb+srv://user:???@cluster0.dhwmu.mongodb.net/?retryWrites=true&w=majority'
+import dotenv from "dotenv"
+
+
+dotenv.config()
+const connectString = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@clusterm.ow4v8a3.mongodb.net/${process.env.DB}?retryWrites=true&w=mojotory`
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
+const client = new MongoClient(connectString, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -12,15 +16,17 @@ const client = new MongoClient(uri, {
 
 async function connect() {
   try {
-    await client.connect()
-    const database = client.db('database')
-    return database.collection('movies')
+    await client.connect();
+    console.log("Database connected");
+    const database = client.db('moviesdb');
+    return database.collection('movies');
   } catch (error) {
-    console.error('Error connecting to the database')
-    console.error(error)
-    await client.close()
+    console.error('Error connecting to the database');
+    console.error(error);
+    await client.close();
   }
 }
+
 
 export class MovieModel {
   static async getAll({ genre }) {

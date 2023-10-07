@@ -1,0 +1,130 @@
+<%- include("template/header", {tituloWeb: 'mascota_id'}) %>
+
+    <div class="container">
+        <h1>Detalle de mascota</h1>
+        <% if (error) { %>
+            <p><%= mensaje %></p>
+            <a href="/mascotas" class="btn btn-dark btn-block">Volver a mascota</a>
+        <% } %>
+        
+        <% if (!error) { %>
+            <form id="form-edit" data-id = "<%= mascota._id %>">
+                <input 
+                    type="text"
+                    class="form-control my-2"
+                    name="animal"
+                    value="<%= mascota.animal  %>"
+                    id="desc-input"
+                >
+                <input 
+                    type="text"
+                    class="form-control my-2"
+                    name="nombre"
+                    value="<%= mascota.nombre %>"
+                    id="name-input"
+                >
+                <input 
+                    type="text"
+                    class="form-control my-2"
+                    name="descripcion"
+                    value="<%= mascota.descripcion %>"
+                    id="name-input"
+                >
+                <button
+                    class="btn btn-warning btn-block mt-2 mb-2"
+                    style= "width: 100%;"
+                >Editar
+                </button>
+            </form>
+
+            <hr>
+
+            <button
+                class="btn btn-danger brn-sm mt-2 mb-2"
+                type="submit"
+                id="btnEliminar"
+                data-id = "<%= mascota._id %>" 
+            >Eliminar
+            </button>
+
+            <!-- <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">_id</th>
+                        <th scope="col">Animal</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><%= mascota._id %></th>
+                        <th scope="row"><%= mascota.animal %></th>
+                        <td scope="row"><%= mascota.nombre %></td>
+                        <td scope="row"><%= mascota.descripcion %></td>
+                        <td scope="row">
+                            <button
+                                class="btn btn-danger brn-sm"
+                                id="btnEliminar"
+                                data-id = "<%= mascota._id %>" 
+                            >Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> -->
+        <% } %>
+    </div>
+    
+<%- include("template/footer") %>
+
+<script>
+
+    const btnEliminar = document.getElementById("btnEliminar")
+
+    btnEliminar.addEventListener("click",async () => {
+    const id = btnEliminar.dataset.id
+        try {
+            const data = await fetch(`/mascotas/${id}`, {
+            method: "delete"
+            })
+
+            const res = await data.json()
+            if(res.estado){
+                window.location.href = "/mascotas"
+            }else{
+                console.log(res)
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
+
+    const formEdit = document.getElementById("form-edit")
+
+    formEdit.addEventListener("submit", async (e)=>{
+        e.preventDefault()
+        const nombre = formEdit.elements["nombre"].value
+        const descripcion = formEdit.elements["descripcion"].value
+        const id = formEdit.dataset.id
+        
+        try {
+            const data = await fetch(`/mascotas/${id}`,{
+                method: "put",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({nombre, descripcion})
+            })
+            const res = await data.json()
+            console.log(res)
+
+            if(res.estado == true){ window.location.href = "/mascotas" }
+        } catch (error) {
+            console.log(error)
+        }
+    })
+
+</script>

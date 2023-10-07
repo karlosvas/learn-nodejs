@@ -5,9 +5,9 @@
     "main": "app.js",
     "type": "module",
     "scripts": {
-        "start:mysql": "node --watch ./web/server-whith-mysql.js",
-        "start:mongobd": "node --watch ./web/server-whith-mongodb.js",
-        "start:local": "node --watch ./web/local-file-sistem.js",
+        "start-mysql": "nodemon ./web/server-whith-mysql.js",
+        "start-mongodb": "nodemon ./web/server-whith-mongodb.js",
+        "start-local": "nodemon ./web/local-file-sistem.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -16,6 +16,7 @@
     "dependencies": {
         "cors": "2.8.5",
         "crypto": "^1.0.1",
+        "dotenv": "^16.3.1",
         "express": "4.18.2",
         "mongodb": "5.7.0",
         "mysql2": "^3.6.1",

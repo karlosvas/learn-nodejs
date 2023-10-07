@@ -1,8 +1,8 @@
 # learn-nodejs
-En este repositorio se verán los conceptos de NodeJS desde cero, crear páginas dinámicas, crear paginas estáticas, asignar rutas, modelos y squemas con bases de datos como MySQL y MongoDB Atlas + mongoose 
+En este repositorio se verán los conceptos de NodeJS desde cero, crear páginas dinámicas, crear paginas estáticas, asignar rutas, modelos y squemas con bases de datos como MySQL y MongoDB Atlas + mongoose.
 
 ## Pruebalo
-Si encuentras oportunidades de mejora o identificas problemas, estaría agradecido si pudieras abrir issues en el repositorio. Tu experiencia y comentarios serían de gran ayuda para mejorar el proyecto. ¡Gracias de antemano!" 👍
+Si encuentras oportunidades de mejora o identificas problemas, estaría agradecido si pudieras abrir issues en el repositorio. Tu experiencia y comentarios serían de gran ayuda para mejorar el proyecto. ¡Gracias de antemano!"
 ```bash
 pnpm i
 pnpm run start
@@ -16,7 +16,7 @@ Cursos bluuweb lista de reproduccion: https://www.youtube.com/watch?v=mG4U9t5nWG
 En CommandJS no hace falta poner extensión al utilizarlo:
 "const {sum} = require('./sum.mjs')"
 Mietras que en EMAScript si es necesario poner la extensión:
-"import {sum, sub, mult} from './sum.mjs'
+"import {sum, sub, mult} from './sum.mjs'.
 
 Actualmente es mas recomendable y mas utilizado mjs, utilizan el sistema de módulos ES6 (ECMAScript) nativo
 Siempre hay que priorizar que sean asíncronas o promesas antes que síncronas.
