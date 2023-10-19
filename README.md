@@ -9,7 +9,7 @@ pnpm run start
 ```
 ## src
 Cursos midudev: https://www.youtube.com/watch?v=yB4n_K7dZV8&list=PLUofhDIg_38qm2oPOV-IRTTEKyrVBBaU7  
-Cursos bluuweb lista de reproduccion: https://www.youtube.com/watch?v=mG4U9t5nWG8&list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6
+Cursos bluuweb: https://www.youtube.com/watch?v=mG4U9t5nWG8&list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6
 
 ## Apuntes
 
@@ -42,10 +42,28 @@ desarrollo y no son esenciales para que la aplicación funcione en producción.
 
 ## Status code;
 Existe una página web que explíca todos los errores de una manera divertida con imágenes de gatos,
-https://http.cat
+https://http.cat 😸
 
 Un buffer: En nodejs es una clase global que se utiliza para trabajar con datos binarios,
 lo guarda en un espacio de la memoria física.
 
-### POST - PUT - PATCH
+## POST - PUT - PATCH
 ![post-put-patch](./img/post-put-patch.png)
+
+## Web-sockets
+![post-put-patch](./img/post-put-patch.png)
+
+## CRUD
+CRUD es un acrónimo que se utiliza en el desarrollo de aplicaciones y sistemas de gestión de bases de datos para describir las operaciones fundamentales que se pueden realizar en los datos. Representa las siguientes operaciones:
+
+Create (Crear):  
+Implica la creación de nuevos registros o datos en una base de datos o sistema de almacenamiento. En el contexto de una aplicación web o de base de datos, esto se traduce en la inserción de nuevos elementos, como usuarios, productos, publicaciones, etc.
+
+Read (Leer):  
+Consiste en recuperar o consultar datos existentes de una base de datos o sistema de almacenamiento. Esto puede incluir la visualización de información detallada sobre un registro, la búsqueda de datos específicos o la obtención de una lista de registros.
+
+Update (Actualizar):  
+Implica la modificación o actualización de datos existentes en la base de datos o sistema de almacenamiento. Puede ser cambiar información en un registro, como actualizar la dirección de correo electrónico de un usuario o modificar los detalles de un producto.
+
+Delete (Eliminar):  
+Consiste en eliminar registros o datos existentes de la base de datos o sistema de almacenamiento. Esto puede ser la eliminación de una cuenta de usuario, la eliminación de una publicación de blog o la eliminación de un producto de una tienda en línea.
