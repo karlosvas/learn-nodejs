@@ -5,10 +5,23 @@
     <title>karloschat</title>
     <script type="module">
         import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
-        const socket = io();
+        const socket = io({
+            auth: {
+                token: '123',
+                username: "karlosvas",
+                serverOffset: 0
+            }
+        });
 
         const form = document.getElementById("form")
         const input = document.getElementById("input")
+        const messages = document.getElementById("messages")
+
+        socket.on('chat message',(msg, serverOffset) => {
+            const item = `<li>${msg}</li>`
+            messages.insertAdjacentHTML('beforeend', item)
+            socket.auth.serverOffset = serverOffset
+        })
 
         form.addEventListener('submit', (e) => {
             e.preventDefault()
@@ -30,11 +43,32 @@
             grid-template-rows: 1fr;
         }
 
+        #messages {
+            list-style: none;
+            margin: 0;
+            padding: 0;;
+            width: 100%;
+        }
+
+        #messages>li {
+            background: rgb(253, 255, 255);
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        #messages>li:nth-child(odd) {
+            background: rgb(168, 255, 241);
+            width: 100%;
+            border: 2px solid black;
+        }
+
         #chat{
+            background-image: url("https://imgs.search.brave.com/EqOsIHT8oJjLfdFriuXGziBByfhcG6RkGwi3ArlDtN0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/eHRyYWZvbmRvcy5j/b20vd2FsbHBhcGVy/cy92ZXJ0aWNhbC9l/c3BhY2lvLWVzdHJl/bGxhcy11bml2ZXJz/by1uZWJ1bG9zYS0z/MzM3LmpwZw");
+            color: #000000;
             border: 1px solid #ccc;
             border-radius: 4px;
             overflow: hidden;
-            width: 500px;
+            width: 450px;
             height: 90%;
             position: relative;
         }
@@ -62,24 +96,25 @@
         }
 
         #form > button{
-            background: #09f;
-            color:#fff;
+            background: rgb(0, 255, 170);
+            color:#333333;
             border: 0;
             margin: 3px;
-            border-radius: 4px;
+            border-radius: 10px;
         }
         
         #form > button:hover{
-            background: #0cf;
+            background: rgb(168, 255, 241);
         }
     </style>
 </head>
 <body>
     <section id="chat">
-        <form action="" id="form">
-            <input type="text" name="message" id="input" placeholder="Type a message" autocomplete="off">
-            <button type="submit">Enviar</button>
-        </form>
+      <ul id="messages"></ul>
+      <form id="form">
+        <input type="text" name="message" id="input" placeholder="Type a message" autocomplete="off" />
+        <button type="submit">Enviar</button>
+      </form>
     </section>
-</body>
+  </body>
 </html>
