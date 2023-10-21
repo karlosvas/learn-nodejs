@@ -40,17 +40,14 @@ El otro tipo son las "dependencias de desarollo", estas son las dependencias que
 desarrollo y no son esenciales para que la aplicación funcione en producción.
 "npm i dependencia -D" o "npm i dependencia --development" indica que es de desarollo.
 
-## Status code;
-Existe una página web que explíca todos los errores de una manera divertida con imágenes de gatos,
+## Status code
+Existe una página web que explíca todos los errores de una manera divertida con imágenes de gatos.  
 https://http.cat 😸
 
 Un buffer: En nodejs es una clase global que se utiliza para trabajar con datos binarios,
 lo guarda en un espacio de la memoria física.
 
 ## POST - PUT - PATCH
-![post-put-patch](./img/post-put-patch.png)
-
-## Web-sockets
 ![post-put-patch](./img/post-put-patch.png)
 
 ## CRUD
@@ -67,3 +64,11 @@ Implica la modificación o actualización de datos existentes en la base de dato
 
 Delete (Eliminar):  
 Consiste en eliminar registros o datos existentes de la base de datos o sistema de almacenamiento. Esto puede ser la eliminación de una cuenta de usuario, la eliminación de una publicación de blog o la eliminación de un producto de una tienda en línea.
+
+Creado con socket.io https://github.com/socketio/socket.io
+
+## Web-sockets
+![post-put-patch](./img/web-sokets.png.png)
+
+## IO
+![post-put-patch](./img/io.png)
